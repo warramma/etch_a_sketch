@@ -1,19 +1,31 @@
 const container = document.querySelector(".container");
 
-for(i = 0; i < 16; i++){
-    const div = document.createElement("div");
-    div.classList.add('line');
-    fillLine(div);
-    container.appendChild(div);
+function setGrid(num){
+    if(num <= 100){
+        for(i = 0; i < num; i++){
+            const div = document.createElement("div");
+            div.classList.add('line');
+            fillLine(div, num);
+            container.appendChild(div);
+        }
+    }
+    else{
+        setGrid(prompt('Please enter a number equal to or below 100: '));
+    }
 }
 
-function fillLine(div){
-    for(let i=0; i < 16; i++){
+
+
+function fillLine(div, num){
+    for(let i=0; i < num; i++){
         const square = document.createElement("div");
         square.classList.add("square");
         div.appendChild(square);
     }
 }
+//----set size
+setGrid(prompt("Enter a number between 1 and 100 to create your sketchpad: "));
+//--set hover
 const squares = document.querySelectorAll('.square');
 
 for(let i = 0; i < squares.length; i++){
@@ -22,7 +34,5 @@ for(let i = 0; i < squares.length; i++){
         event.stopPropagation();
     });
 }
-
-//----set size
 
 
