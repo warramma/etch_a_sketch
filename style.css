@@ -20,12 +20,3 @@ body{
     flex-direction: column;
     width: 100%;
 }
-
-.hover{
-    background-color: grey;
-}
-.test{
-    border: 1px solid black;
-    width: 960px;
-    height: 960px;
-}
