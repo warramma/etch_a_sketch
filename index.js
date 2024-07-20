@@ -14,8 +14,6 @@ function setGrid(num){
     }
 }
 
-
-
 function fillLine(div, num){
     for(let i=0; i < num; i++){
         const square = document.createElement("div");
@@ -23,14 +21,21 @@ function fillLine(div, num){
         div.appendChild(square);
     }
 }
-//----set size
+
+function randomColor(){
+    let color = "#";
+    let random = Math.floor(Math.random()*16777215).toString(16);
+    return color + random;
+}
+
+//----set size based on user input
 setGrid(prompt("Enter a number between 1 and 100 to create your sketchpad: "));
 //--set hover
 const squares = document.querySelectorAll('.square');
 
 for(let i = 0; i < squares.length; i++){
     squares[i].addEventListener("mouseover", ()=>{
-        squares[i].classList.add("hover");
+        squares[i].style.backgroundColor = randomColor();
         event.stopPropagation();
     });
 }
