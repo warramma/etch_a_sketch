@@ -12,6 +12,14 @@ function setGrid(num){
     else{
         setGrid(prompt('Please enter a number equal to or below 100: '));
     }
+    const squares = document.querySelectorAll('.square');
+
+    for(let i = 0; i < squares.length; i++){
+        squares[i].addEventListener("mouseover", ()=>{
+            squares[i].style.backgroundColor = randomColor();
+            event.stopPropagation();
+        });
+}
 }
 
 function fillLine(div, num){
@@ -29,15 +37,12 @@ function randomColor(){
 }
 
 //----set size based on user input
-setGrid(prompt("Enter a number between 1 and 100 to create your sketchpad: "));
-//--set hover
-const squares = document.querySelectorAll('.square');
 
-for(let i = 0; i < squares.length; i++){
-    squares[i].addEventListener("mouseover", ()=>{
-        squares[i].style.backgroundColor = randomColor();
-        event.stopPropagation();
-    });
-}
+const gridBtn = document.querySelector("#setGridbtn");
+gridBtn.addEventListener("click", ()=>{
+    setGrid(prompt("Enter a number between 1 and 100: "));
+});
+
+
 
 
