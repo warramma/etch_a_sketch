@@ -40,7 +40,17 @@ function randomColor(){
 
 const gridBtn = document.querySelector("#setGridbtn");
 gridBtn.addEventListener("click", ()=>{
+    container.replaceChildren();
     setGrid(prompt("Enter a number between 1 and 100: "));
+});
+
+const resetBtn = document.querySelector('#resetbtn');
+resetBtn.addEventListener("click", ()=>{
+    const squares = document.querySelectorAll(".square");
+    for(let i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = "";
+            event.stopPropagation();
+        }
 });
 
 

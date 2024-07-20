@@ -20,3 +20,12 @@ body{
     flex-direction: column;
     width: 100%;
 }
+.buttons{
+    padding: 20px;
+}
+.buttons button{
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 15px;
+    cursor: pointer;
+}
